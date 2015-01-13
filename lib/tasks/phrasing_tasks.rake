@@ -11,11 +11,22 @@ CONFIG
 
 MODULE_FILE = <<-MODULE
 module PhrasingHelper
+  # You must implement the authorized_editor? method.
+  # Example:
+  #
+  # def authorized_editor?
+  #  current_user.is_admin?
+  # end
+
+  def authorized_editor?
+    raise NotImplementedError.new("You must implement the authorized_editor? method")
+  end
+
   # You must implement the can_edit_phrases? method.
   # Example:
   #
   # def can_edit_phrases?
-  #  current_user.is_admin?
+  #  current_user.is_admin? && @phrasing_enabled
   # end
 
   def can_edit_phrases?

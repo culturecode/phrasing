@@ -129,7 +129,7 @@ class PhrasingPhrasesController < Phrasing.parent_controller.constantize
 
 
     def authorize_editor
-      redirect_to root_path unless can_edit_phrases?
+      redirect_to root_path unless authorized_editor?
     end
 
 end
